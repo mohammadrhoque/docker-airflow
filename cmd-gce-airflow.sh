@@ -12,6 +12,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo usermod -a -G docker $USER
 sudo apt-get -y install docker-compose-plugin
+# Run the following commands separately if fails
 sudo wget https://raw.githubusercontent.com/mohammadrhoque/docker-airflow/main/run-af-platform.sh
 sudo chmod +x run-af-platform.sh
 sudo ./run-ab-platform.sh -b
