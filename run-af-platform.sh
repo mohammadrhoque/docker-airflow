@@ -40,7 +40,7 @@ Help()
 # any string is an array to POSIX shell. Space seperates values
 all_files="$docker_compose_yaml $dot_env"
 
-base_github_url="https://raw.githubusercontent.com/mohammadrhoque/docker-airflow/main//v$VERSION/"
+base_github_url="https://raw.githubusercontent.com/mohammadrhoque/docker-airflow/main/v$VERSION/"
 
 ############################################################
 # Download                                                 #
