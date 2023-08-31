@@ -23,7 +23,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-..}/target_latest:/opt/airflow/dags/target_latest
+    - ${AIRFLOW_PROJ_DIR:-.}/target_latest:/opt/airflow/dags/target_latest
     # The last mount mainly focuses on availing dbt compiled manifest.json file
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
@@ -44,7 +44,7 @@ services:
       - "2376:2375"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/{$USER:-vm-user}/.config/gcloud/credentials.json:/home/vm-user/.config/gcloud/credentials.json
+      - /home/vm-user/.config/gcloud/credentials.json:/home/vm-user/.config/gcloud/credentials.json
       # /home/{$USER:-vm-user}/.config/gcloud/credentials.json is the service json that should be used in GCP related work
   postgres:
     image: postgres:13
